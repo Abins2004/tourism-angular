@@ -1,0 +1,77 @@
+/* Ensure the carousel fills the parent container and has the right height */
+.caro {
+  width: 100%;
+  height: 500px; /* You can adjust this based on your design */
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Carousel images should fill the entire space */
+.carousels .carousel-item img {
+  width: 100%; /* Ensure the image takes the full width of the carousel container */
+  height: 100%; /* Set the height to 100% to fill the remaining space */
+  object-fit: cover; /* Ensure images are cropped to fit, maintaining aspect ratio */
+  transition: transform 0.5s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Apply hover effect with zoom and color transformation */
+.carousels .carousel-item:hover img {
+  transform: scale(1.1); /* Zoom in effect */
+  opacity: 0.85; /* Slight fade effect */
+}
+
+/* Optional: Add a dynamic overlay with color on hover */
+.carousels .carousel-item:hover::before {
+  content: ''; /* Create an empty content box */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show overlay on hover */
+.carousels .carousel-item:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Ensure that the carousel image container has relative positioning for overlay */
+.carousels .carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Adding a glowing hover effect for extra engagement */
+.carousels .carousel-item:hover img {
+  transform: scale(1.1) rotate(5deg); /* Adds rotation on hover */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); /* Adds glowing effect */
+}
+
+/* Optional: Style for carousel navigation (arrows) */
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+/* For mobile devices, adjust the size of the images and text */
+@media (max-width: 768px) {
+  /* On smaller screens, reduce image height for better fit */
+  .carousels .carousel-item img {
+      height: 300px; /* Lower height for smaller screens */
+  }
+  
+  .head {
+      font-size: 2rem; /* Make the title smaller on mobile */
+  }
+  
+  .par {
+      font-size: 1rem; /* Make the paragraph text smaller on mobile */
+  }
+}

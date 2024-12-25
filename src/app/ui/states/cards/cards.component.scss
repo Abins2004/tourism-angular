@@ -1,0 +1,22 @@
+.card{
+    color: rgb(195, 195, 89);
+    box-shadow: 0px 0px 10px rgb(216, 130, 144);
+}
+.card:hover{
+    transition: 2s;
+    scale: 102%;
+    color: rgb(211, 21, 30);
+}
+img{
+    height: 200px;
+}
+
+.card-img-top{
+    padding: 10px;
+    border-radius: 1pc;
+    transition: 2s;
+}
+.card-img-top:hover{
+    scale: 105%;
+    transition: 2s;
+}
